@@ -112,7 +112,7 @@ public class lesson04 : MonoBehaviour
     public void KillPlayer()
     {
         animator.SetTrigger("PlayerDeath");
-        GetComponent<PlayerController>().PlayerDied();
+        GetComponent<CubeController>().PlayerDied();
         levelController.ShowLoseUI();
     }
 

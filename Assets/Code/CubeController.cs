@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
+public class CubeController : MonoBehaviour
 {
     public float speed, jumpForce;
     public Rigidbody rb;
