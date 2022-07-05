@@ -71,7 +71,7 @@ public class lesson04 : MonoBehaviour
 
     private void WinGame()
     {
-        levelController.SetGameStatus(false);
+        levelController.GameIsRunning(false);
         levelController.ShowWinUI();
     }
 

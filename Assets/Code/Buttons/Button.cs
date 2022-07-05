@@ -16,7 +16,7 @@ public class Button : MonoBehaviour
         renderer.material.color = Color.green;
     }
 
-    public void HoverOffButton()
+    public virtual void HoverOffButton()
     {
         renderer.material.color = Color.red;
     }
@@ -26,6 +26,11 @@ public class Button : MonoBehaviour
         Debug.Log("You Activated a Button");
         animator.SetTrigger("Press Button");
         
+    }
+
+    public virtual void RunPythonCode()
+    {
+
     }
 
    

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Scripting.Python;
 
 public class Button_Platforms : Button
 {
@@ -11,7 +12,7 @@ public class Button_Platforms : Button
     {
         base.ActivateButton();
         Debug.Log("Platform Button");
-        StartCoroutine(ActivatePlatforms());
+        RunPythonCode();
     }
 
     private IEnumerator ActivatePlatforms()
@@ -24,4 +25,15 @@ public class Button_Platforms : Button
 
         }
     }
+
+    public RisingPlatform[] GetPlatforms()
+    {
+        return platforms;
+    }
+
+    public override void RunPythonCode()
+    {
+        PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/01.py");
+    }
+
 }

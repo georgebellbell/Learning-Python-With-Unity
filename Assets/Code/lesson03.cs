@@ -46,7 +46,7 @@ public class lesson03 : MonoBehaviour
         if (other.gameObject.CompareTag("finish"))
         {
             levelController.ShowWinUI();
-            levelController.SetGameStatus(false);
+            levelController.GameIsRunning(false);
         }
         
 

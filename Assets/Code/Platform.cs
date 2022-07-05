@@ -12,17 +12,18 @@ public class Platform : MonoBehaviour
     {
         cube,
         sphere,
+        cylinder,
         floor
     }
 
     [SerializeField] PlatformType thisPlatform;
 
-    lesson01 lesson01;
+    lesson01And02 lesson01;
     [SerializeField] bool platformActivated = false;
 
     private void Start()
     {
-        lesson01 = FindObjectOfType<lesson01>();
+        lesson01 = FindObjectOfType<lesson01And02>();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -41,6 +42,16 @@ public class Platform : MonoBehaviour
                 break;
             case PlatformType.sphere:
                 if (spawnedObject.CompareTag("sphere"))
+                {
+                    ActivatePlatform(spawnedObject);
+                }
+                else
+                {
+                    ErrorPlatform(spawnedObject);
+                }
+                break;
+            case PlatformType.cylinder:
+                if (spawnedObject.CompareTag("cylinder"))
                 {
                     ActivatePlatform(spawnedObject);
                 }

@@ -1,35 +1,32 @@
 from UnityEngine import GameObject, PrimitiveType, Rigidbody
-import UnityEngine
+import UnityEngine as ue
+
+level = ue.GameObject.FindGameObjectWithTag("levelmanager")
+
+def create_cube(x):
+	level.GetComponent("lesson01And02").CreateCube(x)
+
+def create_sphere(x):
+	level.GetComponent("lesson01And02").CreateSphere(x)
+
+def create_cylinder(x):
+	level.GetComponent("lesson01And02").CreateCylinder(x)
 
 # DO NOT EDIT
 # Name: create_objects
 # Parameter: newObs, list of strings, list of objects to be created
 # Purpose: Moves through supplied list, creating basic primitives based on current list item
 def create_objects(newObs):
-	for x in range(len(newObs) ):
+	for x in range(len(newObs)):
 		if newObs[x] == "cube":
-			new_object = GameObject.CreatePrimitive(PrimitiveType.Cube)
-			Vector = UnityEngine.Vector3(x * 2.0, 1);
-			new_object.transform.position = Vector
-			new_object.tag = "cube"	
+			create_cube(x)
 		elif newObs[x] == "sphere":
-			new_object = GameObject.CreatePrimitive(PrimitiveType.Sphere)
-			Vector = UnityEngine.Vector3(x * 2.0, 1);
-			new_object.transform.position = Vector
-			new_object.tag = "sphere"	
+			create_sphere(x)
 		elif newObs[x] == "cylinder":
-			new_object = GameObject.CreatePrimitive(PrimitiveType.Cylinder)
-			Vector = UnityEngine.Vector3(x * 2.0, 1);
-			new_object.transform.position = Vector
-			new_object.tag = "cylinder"
-		elif newObs[x] == "capsule":
-			new_object = GameObject.CreatePrimitive(PrimitiveType.Capsule)
-			Vector = UnityEngine.Vector3(x * 2.0, 1);
-			new_object.transform.position = Vector
-			new_object.tag = "capsule"
+			create_cylinder(x)
 		else:
 			UnityEngine.Debug.Log("object name not recognised")
 
 
-objects = ["cylinder", "cylinder", "cylinder", "cylinder"]
-create_objects(objects)
+OBJECTS = ["cylinder", "cube", "sphere", "cube", "cylinder"]
+create_objects(OBJECTS)

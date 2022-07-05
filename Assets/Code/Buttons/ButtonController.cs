@@ -35,7 +35,7 @@ public class ButtonController : MonoBehaviour
         {
             GameObject hitObject = hit.collider.gameObject;
 
-            if (hitObject.CompareTag("button") && hit.distance < 5.0f)
+            if (hitObject.tag.Contains("button") && hit.distance < 5.0f)
             {
                 button = hitObject.GetComponent<Button>();
                 button.HoverOverButton();

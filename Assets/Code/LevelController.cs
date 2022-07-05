@@ -27,24 +27,28 @@ public class LevelController : MonoBehaviour
     public void ShowWinUI()
     {
         WinUI.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void ShowLoseUI()
     {
         LoseUI.SetActive(true);
+        Time.timeScale = 0;
     }
 
     void RestartLevel()
     {
+        Time.timeScale = 1;
+        GameIsRunning(true);
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void SetGameStatus(bool gameStatus)
+    public void GameIsRunning(bool gameStatus)
     {
         gameRunning = gameStatus;
     }
 
-    public bool GetGameStatus()
+    public bool IsGameRunning()
     {
         return gameRunning;
     }

@@ -21,9 +21,9 @@ public class CubeController : MonoBehaviour
 
     private void Update()
     {
-        if (levelController.GetGameStatus())
+        if (levelController.IsGameRunning())
         {
-            Debug.Log(levelController.GetGameStatus());
+            Debug.Log(levelController.IsGameRunning());
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
             Vector3 direction = new Vector3(vertical, 0, -horizontal);
@@ -49,7 +49,7 @@ public class CubeController : MonoBehaviour
     public void PlayerDied()
     {
         alive = false;
-        levelController.SetGameStatus(false);
+        levelController.GameIsRunning(false);
     }
 
 }
