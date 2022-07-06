@@ -8,10 +8,10 @@ public class FinishLight : MonoBehaviour
 
     [SerializeField] Material on, off;
 
-    FinishGate finishGate;
+    Gate_Finish finishGate;
     private void Start()
     {
-        finishGate = FindObjectOfType<FinishGate>();
+        finishGate = FindObjectOfType<Gate_Finish>();
     }
     public void ActivateLight()
     {

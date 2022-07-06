@@ -1,32 +1,64 @@
-from UnityEngine import GameObject, PrimitiveType, Rigidbody
+"""
+
+Author: George Bell
+Since: 06-07-2022
+Organisation: Newcastle University
+
+"""
+
 import UnityEngine as ue
 
 level = ue.GameObject.FindGameObjectWithTag("levelmanager")
 
-def create_cube(x):
-	level.GetComponent("lesson01And02").CreateCube(x)
 
-def create_sphere(x):
-	level.GetComponent("lesson01And02").CreateSphere(x)
+def create_cube(x_pos):
+	"""
+	Creates a cube in the unity scene at a specified location
 
-def create_cylinder(x):
-	level.GetComponent("lesson01And02").CreateCylinder(x)
+	:param x_pos: int, X position of cube, should coincide with incrementer of loop
+	"""
+	level.GetComponent("lesson01And02").CreateCube(x_pos)
 
-# DO NOT EDIT
-# Name: create_objects
-# Parameter: newObs, list of strings, list of objects to be created
-# Purpose: Moves through supplied list, creating basic primitives based on current list item
-def create_objects(newObs):
-	for x in range(len(newObs)):
-		if newObs[x] == "cube":
+
+def create_sphere(x_pos):
+	"""
+	Creates a sphere in the unity scene at a specified location
+
+	:param x_pos: int, X position of sphere, should coincide with incrementer of loop
+	"""
+	level.GetComponent("lesson01And02").CreateSphere(x_pos)
+
+
+def create_cylinder(x_pos):
+	"""
+	Creates a cylinder in the unity scene at a specified location
+
+	:param x_pos: int, X position of cylinder, should coincide with incrementer of loop
+	"""
+	level.GetComponent("lesson01And02").CreateCylinder(x_pos)
+
+
+def create_objects(new_list):
+	"""
+	Loops through list of objects passed in, creating different shapes depending on string at current index
+
+	:param new_list: str[], sliced list of the constant OBJECTS list
+	"""
+	for x in range(len(new_list)):
+		if new_list[x] == "cube":
 			create_cube(x)
-		elif newObs[x] == "sphere":
+		elif new_list[x] == "sphere":
 			create_sphere(x)
-		elif newObs[x] == "cylinder":
+		elif new_list[x] == "cylinder":
 			create_cylinder(x)
 		else:
 			UnityEngine.Debug.Log("object name not recognised")
 
 
 OBJECTS = ["cylinder", "cube", "sphere", "cube", "cylinder"]
+
+"""
+Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
+"""
+
 create_objects(OBJECTS)

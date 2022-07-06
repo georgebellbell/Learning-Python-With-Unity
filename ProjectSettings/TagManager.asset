@@ -20,6 +20,7 @@ TagManager:
   - button_slicing_red
   - button_slicing_blue
   - button_slicing_purple
+  - ladder
   layers:
   - Default
   - TransparentFX

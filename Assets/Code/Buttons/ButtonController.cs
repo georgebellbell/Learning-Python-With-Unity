@@ -6,11 +6,6 @@ public class ButtonController : MonoBehaviour
 {
     [SerializeField] Button button;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -31,7 +26,7 @@ public class ButtonController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+        if (Physics.Raycast(transform.position, GetComponentInChildren<Transform>().forward, out hit))
         {
             GameObject hitObject = hit.collider.gameObject;
 
