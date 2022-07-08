@@ -226,5 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee6ac4843791aa4986b927585ecb384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultButtonMaterial: {fileID: 2100000, guid: ed4362d5075d559448be8bf3b380d489, type: 2}
   linkedLight: {fileID: 0}
   buttonActivated: 0
