@@ -23,9 +23,17 @@ def create_cube(y_pos):
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
 
+# while loop solution
 i = 0
-cube_target = 5
+cube_target = 6
 
-while i <= cube_target:
+while i < cube_target:
 	create_cube(i)
 	i = i + 1
+
+# for loop solution
+i = 0
+cube_target = 6
+
+for j in range(cube_target):
+	create_cube(j)

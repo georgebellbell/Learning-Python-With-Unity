@@ -1,7 +1,7 @@
 """
 
 Author: George Bell
-Since: 07-07-2022
+Since: 12-07-2022
 Organisation: Newcastle University
 
 """
@@ -20,21 +20,21 @@ def open_gate():
 
 numbers = obstacle.GetComponent("Gate_Number").GetNumbers()
 
-num1 = numbers[0]
-num2 = numbers[1]
-num3 = numbers[2]
+numA_1 = numbers[0]
+numA_2 = numbers[1]
+numA_3 = numbers[2]
 
-num4 = numbers[3]
-num5 = numbers[4]
-num6 = numbers[5]
+numB_1 = numbers[3]
+numB_2 = numbers[4]
+numB_3 = numbers[5]
 
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
 
-equationA = num1 < num2 < num3
+equationA = numA_1 < numA_2 < numA_3
 
-equationB = num4 * num5 == num6
+equationB = numB_1 * numB_2 == numB_3
 
 if equationA and equationB:
 	open_gate()

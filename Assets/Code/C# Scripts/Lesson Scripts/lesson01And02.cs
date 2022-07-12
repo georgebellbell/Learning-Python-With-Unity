@@ -1,7 +1,7 @@
 /*
  * 
  * Author: George Bell
- * Since:  07-07-2022
+ * Since:  12-07-2022
  * Organisation: Newcastle University
  * 
 */
@@ -15,8 +15,9 @@ public class lesson01And02 : MonoBehaviour
     [SerializeField] Platform[] platforms;
     [SerializeField] GameObject[] tasksLevels;
     [SerializeField] GameObject levelPicker;
-    [SerializeField] TextMeshProUGUI startTest, timeCountUI;
-    [SerializeField] int lessonNumber, timeCount;
+    [SerializeField] TextMeshProUGUI startTest;
+    [SerializeField] int lessonNumber;
+    [SerializeField] float timeCount = 1, timeDelay = 0.5f;
 
     LevelController levelController;
 
@@ -25,7 +26,6 @@ public class lesson01And02 : MonoBehaviour
     private void Start()
     {
         levelController = FindObjectOfType<LevelController>();
-        timeCountUI.text = "" + timeCount;
     }
 
     void Update()
@@ -33,22 +33,24 @@ public class lesson01And02 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !pythonRan)
         {
             startTest.enabled = false;
-            StartCoroutine(Countdown(timeCount));
+            StartCoroutine(Countdown());
             PythonRunner.RunFile($"{Application.dataPath}/code/lesson0" + lessonNumber + ".py");
         }
     }
 
-    private IEnumerator Countdown(int seconds)
+    public IEnumerator Countdown()
     {
-
-        int counter = seconds;
-        while (counter > 0)
+        while (timeCount > 0)
         {
             yield return new WaitForSeconds(1);
-            counter--;
-            timeCountUI.text = "" + counter;
+            timeCount--;
         }
+       
         CheckActivePlatforms();
+    }
+    public void IncreaseTimeRemaining()
+    {
+        timeCount = timeCount + timeDelay;
     }
 
     void CheckActivePlatforms()

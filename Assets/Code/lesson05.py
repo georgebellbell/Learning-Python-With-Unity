@@ -22,5 +22,3 @@ def create_cube(y_pos):
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
-
-

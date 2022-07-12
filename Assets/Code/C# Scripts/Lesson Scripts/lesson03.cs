@@ -35,6 +35,8 @@ public class lesson03 : MonoBehaviour
         levelController = FindObjectOfType<LevelController>();
         totalCoinCount = GameObject.FindGameObjectsWithTag("coin").Length;
         UpdateCoinCounter();
+
+        SetFinish(false);
         
         PythonRunner.RunFile($"{Application.dataPath}/code/lesson03.py");
         CheckTasks();

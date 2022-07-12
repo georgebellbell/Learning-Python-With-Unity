@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50acfab1bfe9b346bd6efb6575b7707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultButtonMaterial: {fileID: 0}
   gate: {fileID: 0}
 --- !u!1001 &8714166921269261719
 PrefabInstance:
@@ -22,8 +23,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 116633572311613442, guid: dcb502f2f274d224c89bd890adb8f0fd, type: 3}
       propertyPath: m_Name
-      value: Button_Light
+      value: Button_Number
       objectReference: {fileID: 0}
+    - target: {fileID: 116633572311613444, guid: dcb502f2f274d224c89bd890adb8f0fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e8216d902dc3c024b847bc07f6e73aff, type: 2}
     - target: {fileID: 116633572311613446, guid: dcb502f2f274d224c89bd890adb8f0fd, type: 3}
       propertyPath: m_RootOrder
       value: 0

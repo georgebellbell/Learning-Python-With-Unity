@@ -26,6 +26,7 @@ def activate_pillars(sliced_pillars):
 
 	button_blue.GetComponent("Button_Slicing").SetPythonPillars(pillars_bool)
 
+
 PILLARS = ["Pillar1", "Pillar2", "Pillar3", "Pillar4", "Pillar5", "Pillar6", "Pillar7", "Pillar8", "Pillar9"]
 
 """

@@ -13,7 +13,7 @@ button_red = ue.GameObject.FindGameObjectWithTag("button_slicing_red")
 
 def activate_pillars(sliced_pillars):
 	"""
-	Sets certain pillars in list to blue colour
+	Sets certain pillars in list to red colour
 
 	:param sliced_pillars: str[], sliced list of PILLARS, containing pillars to be activated
 	"""

@@ -20,13 +20,13 @@ def open_gate():
 
 numbers = obstacle.GetComponent("Gate_Number").GetNumbers()
 
-num1 = numbers[0]
-num2 = numbers[1]
-num3 = numbers[2]
+numA_1 = numbers[0]
+numA_2 = numbers[1]
+numA_3 = numbers[2]
 
-num4 = numbers[3]
-num5 = numbers[4]
-num6 = numbers[5]
+numB_1 = numbers[3]
+numB_2 = numbers[4]
+numB_3 = numbers[5]
 
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas

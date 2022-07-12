@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb83526bb243324983237818d3b4f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultButtonMaterial: {fileID: 0}
   platforms:
   - {fileID: 0}
   - {fileID: 0}
@@ -27,8 +28,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 116633572311613442, guid: dcb502f2f274d224c89bd890adb8f0fd, type: 3}
       propertyPath: m_Name
-      value: Platform Button
+      value: Button_Platforms
       objectReference: {fileID: 0}
+    - target: {fileID: 116633572311613444, guid: dcb502f2f274d224c89bd890adb8f0fd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e8216d902dc3c024b847bc07f6e73aff, type: 2}
     - target: {fileID: 116633572311613446, guid: dcb502f2f274d224c89bd890adb8f0fd, type: 3}
       propertyPath: m_RootOrder
       value: 0
