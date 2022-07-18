@@ -6,6 +6,7 @@
  * 
 */
 using UnityEditor.Scripting.Python;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -18,17 +19,21 @@ public class lesson03 : MonoBehaviour
     [SerializeField] GameObject finishObject;
     [SerializeField] TextMeshProUGUI coinCounter;
 
-    [SerializeField] TextMeshProUGUI[] tasksUI = new TextMeshProUGUI[6];
-    [SerializeField] bool[] tasks = new bool[6];
+    [SerializeField] TextMeshProUGUI[] tasksUI = new TextMeshProUGUI[7];
+    [SerializeField] bool[] tasks = new bool[7];
 
     LevelController levelController;
     Renderer finishRenderer;
     Collider finishCollider;
 
     bool winnable = false;
+    int sceneIndex;
+
 
     private void Start()
     {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         finishRenderer = finishObject.GetComponent<Renderer>();
         finishCollider = finishObject.GetComponent<Collider>();
 
@@ -40,6 +45,14 @@ public class lesson03 : MonoBehaviour
         
         PythonRunner.RunFile($"{Application.dataPath}/code/lesson03.py");
         CheckTasks();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(sceneIndex);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -101,7 +114,10 @@ public class lesson03 : MonoBehaviour
         // Between four and seven coins
         tasks[4] = winnable && currentCoinCount > 4 && currentCoinCount < 7;
         // One or six coins
-        tasks[5] = winnable && currentCoinCount == 1 || currentCoinCount == 6;
+        tasks[5] = winnable && (currentCoinCount == 1 || currentCoinCount == 6);
+        // Not two coins
+        tasks[6] = winnable && currentCoinCount != 2;
+
 
         for (int i = 0; i < tasksUI.Length; i++)
         {

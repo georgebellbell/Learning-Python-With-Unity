@@ -7,6 +7,7 @@
 */
 using UnityEngine;
 using UnityEditor.Scripting.Python;
+using System.Collections;
 
 public class lesson04 : MonoBehaviour
 {
@@ -103,7 +104,13 @@ public class lesson04 : MonoBehaviour
 
     public void KillPlayer()
     {
+        StartCoroutine(DisintegratePlayerAndEndGame());
+    }
+
+    IEnumerator DisintegratePlayerAndEndGame()
+    {
         animator.SetTrigger("PlayerDeath");
+        yield return new WaitForSeconds(1f);
         levelController.EndLevel(false);
     }
 }

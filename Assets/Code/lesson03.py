@@ -14,6 +14,7 @@ player = ue.GameObject.FindGameObjectWithTag("Player")
 def winnable_game(winnable):
 	"""
 	Used to set enable, or disable, the target gate for the level
+
 	:param winnable: bool, True to enable the gate and False to disable the gate
 	"""
 	player.GetComponent("lesson03").SetFinish(winnable)
@@ -24,8 +25,3 @@ coin_count = player.GetComponent("lesson03").GetCoinCount()
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
-
-
-
-
-

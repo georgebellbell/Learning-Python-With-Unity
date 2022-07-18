@@ -61,6 +61,12 @@ if coin_count == 1 or coin_count == 6:
 else:
 	winnable_game(False)
 
+# Gate opens if coin count is not 2
+if coin_count != 2:
+	winnable_game(True)
+else:
+	winnable_game(False)
+
 
 
 

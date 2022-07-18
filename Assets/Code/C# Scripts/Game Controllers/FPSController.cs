@@ -41,16 +41,31 @@ public class FPSController : MonoBehaviour
         else
         {
             playerSpeed = walkSpeed;
-        }    
+        }
+
+        rb.MoveRotation(rb.rotation * Quaternion.Euler(new Vector3(0, Input.GetAxis("Mouse X") * mouseSensitivity, 0)));
+
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping ) 
+        {
+            if (!onLadder)
+            {
+                isJumping = true;
+                rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            }
+            
+        }
+
+        
     }
 
     private void FixedUpdate()
     {
-        rb.MoveRotation(rb.rotation * Quaternion.Euler(new Vector3(0, Input.GetAxis("Mouse X") * mouseSensitivity, 0)));
 
         if (!onLadder)
         {
-            MoveUpLadder();
+            rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * playerSpeed) + (transform.right * Input.GetAxis("Horizontal") * playerSpeed));
+
+            
         }
         else
         {
@@ -59,16 +74,7 @@ public class FPSController : MonoBehaviour
         }
     }
 
-    private void MoveUpLadder()
-    {
-        rb.MovePosition(transform.position + (transform.forward * Input.GetAxis("Vertical") * playerSpeed) + (transform.right * Input.GetAxis("Horizontal") * playerSpeed));
-
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
-        {
-            isJumping = true;
-            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-        }
-    }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -76,20 +82,28 @@ public class FPSController : MonoBehaviour
         {
             isJumping = false;
         }
-        if (collision.gameObject.CompareTag("ladder"))
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (onLadder && other.CompareTag("ladder"))
         {
-            onLadder = true;
-            rb.useGravity = false;
+            ToggleLadder();
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+
+
+    public void ToggleLadder()
     {
-        if (collision.gameObject.CompareTag("ladder"))
-        {
-            onLadder = false;
-            rb.useGravity = true;
-        }
+        onLadder = !onLadder;
+        rb.useGravity = !rb.useGravity;
+    }
+
+    public bool IsOnLadder()
+    {
+        return onLadder;
     }
 
 }

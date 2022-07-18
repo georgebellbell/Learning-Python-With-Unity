@@ -34,8 +34,9 @@ public class lesson05 : MonoBehaviour
         {
             pythonRan = true;
             PythonRunner.RunFile($"{Application.dataPath}/code/lesson05.py");
+            StartCoroutine(Countdown());
         }
-        StartCoroutine(Countdown());
+        
         timeTaken += Time.deltaTime;
         
 

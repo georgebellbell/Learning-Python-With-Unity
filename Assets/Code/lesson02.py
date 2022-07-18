@@ -44,18 +44,20 @@ def create_objects(new_list):
 
 	:param new_list: str[], sliced list of the constant OBJECTS list
 	"""
-	for x in range(len(new_list)):
-		if new_list[x] == "cube":
-			create_cube(x)
-		elif new_list[x] == "sphere":
-			create_sphere(x)
-		elif new_list[x] == "cylinder":
-			create_cylinder(x)
-		else:
-			UnityEngine.Debug.Log("object name not recognised")
+	for i in range(len(OBJECTS)):
+		for j in range(len(new_list)):
+			if new_list[j] == OBJECTS[i]:
+				if new_list[j].__contains__("cube"):
+					create_cube(i)
+				elif new_list[j] == "sphere":
+					create_sphere(i)
+				elif new_list[j].__contains__("cylinder"):
+					create_cylinder(i)
+				else:
+					print("No object in this position?")
 
 
-OBJECTS = ["cylinder", "cube", "sphere", "cube", "cylinder"]
+OBJECTS = ["cylinder1", "cube1", "sphere", "cube2", "cylinder2"]
 
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas

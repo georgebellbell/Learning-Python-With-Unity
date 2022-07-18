@@ -23,7 +23,6 @@ public class NumberChanger : Button
 
     public override void ActivateButton()
     {
-        Debug.Log("Button be activating:)");
         if (mathsOperator == MathsOperator.plus)
         {
             linkedNumber.IncreaseValue();

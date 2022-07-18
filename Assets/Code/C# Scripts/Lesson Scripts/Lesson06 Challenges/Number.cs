@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class Number : MonoBehaviour
 {
-    [SerializeField] int numberValue = 0;
+    [SerializeField] int numberValue;
 
     Mesh mesh;
 
@@ -34,7 +34,7 @@ public class Number : MonoBehaviour
     {
         numberValue--;
 
-        if (numberValue < 0)
+        if (numberValue < 0 || numberValue > 9)
         {
             numberValue = 9;
         }
@@ -46,7 +46,7 @@ public class Number : MonoBehaviour
     void UpdateMesh()
     {
         if (numberValue >= 0 && numberValue <= 9)
-        GetComponent<MeshFilter>().mesh = numbers[numberValue];
+            GetComponent<MeshFilter>().mesh = numbers[numberValue];
     }
 
     public int GetValue()

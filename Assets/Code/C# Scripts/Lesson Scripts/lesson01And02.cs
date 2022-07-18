@@ -32,6 +32,7 @@ public class lesson01And02 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !pythonRan)
         {
+            pythonRan = true;
             startTest.enabled = false;
             StartCoroutine(Countdown());
             PythonRunner.RunFile($"{Application.dataPath}/code/lesson0" + lessonNumber + ".py");
@@ -146,4 +147,6 @@ public class lesson01And02 : MonoBehaviour
         newObject.transform.position = vector;
         newObject.AddComponent<Rigidbody>().drag = 2;
     }
+
+
 }

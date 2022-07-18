@@ -13,6 +13,7 @@ player = ue.GameObject.FindGameObjectWithTag("Player")
 def get_wall_type():
 	"""
 	Retrieves the energy type of the wall the player has just hit
+
 	:return: EnergyType
 	"""
 	return player.GetComponent("lesson04").GetWallType()
@@ -21,6 +22,7 @@ def get_wall_type():
 def get_player_type():
 	"""
 	Retrieves the energy type of the player's shield at the time of hitting the wall
+
 	:return: EnergyType
 	"""
 	return player.GetComponent("lesson04").GetPlayerType()

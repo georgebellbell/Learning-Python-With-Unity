@@ -17,6 +17,7 @@ platforms = button.GetComponent("Button_Platforms").GetPlatforms()
 def activate_platform(current_platform):
     """
     Activates current platform, making it rise up out of the ground
+
     :param current_platform: the current platform object that you want to activate
     """
     current_platform.ActivatePlatform()

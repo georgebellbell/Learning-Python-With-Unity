@@ -36,20 +36,20 @@ Use the functions above and your python knowledge to accomplish the Unity Scene'
 """
 
 # Task 1: 5 Cubes
-for i in range(5):
-	create_cube(i, 0)
+for x in range(5):
+	create_cube(x, 0)
 
 # Task 2: 2 Cubes, 1 Sphere, 2 Cubes
-for i in range(5):
-	if i == 2:
-		create_sphere(i, 0)
+for x in range(5):
+	if x == 2:
+		create_sphere(x, 0)
 	else:
-		create_cube(i, 0)
+		create_cube(x, 0)
 
 # Task 3: Grid of Cubes with Sphere in the middle
-for i in range(5):
-	for j in range(5):
-		if i == 2 and j == 2:
-			create_sphere(i, j)
+for x in range(5):
+	for z in range(5):
+		if x == 2 and z == 2:
+			create_sphere(x, z)
 		else:
-			create_cube(i, j)
+			create_cube(x, z)
