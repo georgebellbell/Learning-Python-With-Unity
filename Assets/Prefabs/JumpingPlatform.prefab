@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1789615709373463780}
   - component: {fileID: 1789615709373463781}
   - component: {fileID: 1789615709373463786}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top
   m_TagString: floor
   m_Icon: {fileID: 0}
@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e533d5dd2bca3145b1d253f8842893f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  errorMessage: {fileID: 0}
 --- !u!1 &1789615709700057817
 GameObject:
   m_ObjectHideFlags: 0
