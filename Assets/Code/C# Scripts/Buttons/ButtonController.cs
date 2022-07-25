@@ -28,7 +28,7 @@ public class ButtonController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, GetComponentInChildren<Transform>().forward, out hit))
+        if (Physics.Raycast(transform.position, GetComponent<Transform>().forward, out hit))
         {
             GameObject hitObject = hit.collider.gameObject;
 
