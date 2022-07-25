@@ -27,10 +27,10 @@ def activate_pillars(sliced_pillars):
 	button_red.GetComponent("Button_Slicing").SetPythonPillars(pillars_bool)
 
 
+PILLARS = ["Pillar1", "Pillar2", "Pillar3", "Pillar4", "Pillar5", "Pillar6", "Pillar7", "Pillar8", "Pillar9"]
+
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
-
-PILLARS = ["Pillar1", "Pillar2", "Pillar3", "Pillar4", "Pillar5", "Pillar6", "Pillar7", "Pillar8", "Pillar9"]
 
 activate_pillars(PILLARS[3:5] + PILLARS[7:])

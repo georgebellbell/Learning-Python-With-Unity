@@ -30,16 +30,14 @@ public class Platform : MonoBehaviour
     {
         GameObject spawnedObject = collision.gameObject;
         string type = spawnedObject.tag;
-        if(thisPlatform != PlatformType.floor)
+        
+        if (thisPlatform.ToString() == type)
         {
-            if (thisPlatform.ToString() == type)
-            {
-                lesson.IncreaseTimeRemaining();
-                ActivatePlatform(spawnedObject);
-
-                return;
-            }
+            lesson.IncreaseTimeRemaining();
+            ActivatePlatform(spawnedObject);
+            return;
         }
+        
         ErrorPlatform(spawnedObject);
     }
 

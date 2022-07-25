@@ -22,13 +22,13 @@ public class LevelController : MonoBehaviour
 
     void Update()
     {
-        if (gameRunning == false && Input.GetKeyDown(KeyCode.T))
+        if (gameRunning == false && Input.GetKeyDown(KeyCode.R))
         {
             RestartLevel();
         }
     }
 
-    void RestartLevel()
+    public void RestartLevel()
     {
         TogglePause();
         SceneManager.LoadScene(sceneIndex);
@@ -48,9 +48,15 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    public void PauseGame()
+    {
+        gameRunning = false;
+        Time.timeScale = 0;
+    }
+
     public void EndLevel(bool GameWon)
     {
-        TogglePause();
+        PauseGame();
 
         if (GameWon)
         {

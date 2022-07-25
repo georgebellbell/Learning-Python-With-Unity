@@ -27,12 +27,9 @@ public class lesson03 : MonoBehaviour
     Collider finishCollider;
 
     bool winnable = false;
-    int sceneIndex;
-
 
     private void Start()
     {
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         finishRenderer = finishObject.GetComponent<Renderer>();
         finishCollider = finishObject.GetComponent<Collider>();
@@ -51,7 +48,7 @@ public class lesson03 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(sceneIndex);
+            levelController.RestartLevel();
         }
     }
 

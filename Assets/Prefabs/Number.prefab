@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74b79afffa4e6948833f463857fd1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultButtonMaterial: {fileID: 0}
   linkedNumber: {fileID: 5045494226145224841}
   mathsOperator: 0
 --- !u!65 &2760390999093159330
@@ -207,6 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74b79afffa4e6948833f463857fd1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultButtonMaterial: {fileID: 0}
   linkedNumber: {fileID: 5045494226145224841}
   mathsOperator: 1
 --- !u!65 &8858148870776023450
@@ -220,8 +222,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.8799996, y: 2.1599998, z: 4.9999995}
-  m_Center: {x: 2.9399998, y: 6.680002, z: 2.4999921}
+  m_Size: {x: 10.703314, y: 8.765403, z: 4.9999995}
+  m_Center: {x: 3.0071442, y: 6.8520107, z: 2.4999924}
 --- !u!1 &8708928151962981402
 GameObject:
   m_ObjectHideFlags: 0
