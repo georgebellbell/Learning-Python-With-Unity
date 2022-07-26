@@ -5,22 +5,23 @@
  * Organisation: Newcastle University
  * 
 */
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NumberChanger : Button
 {
-
     public enum MathsOperator
     {
         plus,
         minus
     }
     [SerializeField] Number linkedNumber;
-
     [SerializeField] MathsOperator mathsOperator;
 
+    /// <summary>
+    /// Depending on MathsOperator type, button press overridden to change number value
+    /// MathsOperator = plus, increase
+    /// MathsOperator = minus, decrease
+    /// </summary>
     public override void ActivateButton()
     {
         if (mathsOperator == MathsOperator.plus)
@@ -32,5 +33,4 @@ public class NumberChanger : Button
             linkedNumber.DecreaseValue();
         }
     }
-
 }

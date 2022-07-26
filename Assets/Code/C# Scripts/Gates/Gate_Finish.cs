@@ -18,6 +18,9 @@ public class Gate_Finish : Gate
         levelController = FindObjectOfType<LevelController>();
     }
 
+    /// <summary>
+    /// Check all lights and all are active, gate will open
+    /// </summary>
     public void CheckLights()
     {
         foreach (FinishLight light in finishLights)
@@ -39,6 +42,9 @@ public class Gate_Finish : Gate
         }
     }
 
+    /// <summary>
+    /// If gate is open, upon entering the game is won
+    /// </summary>
     public override void TriggerEnter()
     {
         base.TriggerEnter();

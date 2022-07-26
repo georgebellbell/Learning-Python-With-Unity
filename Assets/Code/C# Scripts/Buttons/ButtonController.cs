@@ -11,6 +11,9 @@ public class ButtonController : MonoBehaviour
 {
     [SerializeField] Button button;
 
+    /// <summary>
+    /// If there is an active button, player can left click to activate respective button
+    /// </summary>
     void Update()
     {
         if (button && Input.GetKeyUp(KeyCode.Mouse0))
@@ -24,6 +27,9 @@ public class ButtonController : MonoBehaviour
         CheckForButton();
     }
 
+    /// <summary>
+    /// raycast straight forward to look for any button objects, if found, will activate it
+    /// </summary>
     private void CheckForButton()
     {
         RaycastHit hit;

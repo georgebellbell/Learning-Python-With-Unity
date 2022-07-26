@@ -28,6 +28,9 @@ public class Gate_Number : Gate
     [SerializeField] Number num6Object;
     [SerializeField] int number6;
     
+    /// <summary>
+    /// Takes values assigned to number objects and sets them equal to respective integer variables
+    /// </summary>
     public void SetNumbers()
     {
         number1 = num1Object.GetValue();
@@ -41,6 +44,9 @@ public class Gate_Number : Gate
         numbers = new int[6] { number1, number2, number3, number4, number5, number6};
     }
 
+    /// <summary>
+    /// Called via python code to check numbers on wall and opens gate if valid
+    /// </summary>
     public void CheckGate()
     {
         // unity side checking to see if numbers are valid
@@ -55,6 +61,10 @@ public class Gate_Number : Gate
         }
     }
 
+    /// <summary>
+    /// Called via python to retrieve all numbers on the walls
+    /// </summary>
+    /// <returns>array of integers for wall numbers</returns>
     public int[] GetNumbers()
     {
         return numbers;

@@ -9,15 +9,15 @@ using UnityEngine;
 
 public class FallingPillar : MonoBehaviour
 {
-    Animator animator;
-    Renderer pillarRenderer;
-
-    [SerializeField]PillarType currentPlatformType = PillarType.none;
+    [SerializeField] PillarType currentPillarType = PillarType.none;
     [SerializeField] PillarType targetPlatformType = PillarType.none;
 
     [SerializeField] Material red, blue, purple;
 
-    bool correctPlatform;
+    Animator animator;
+    Renderer pillarRenderer;
+
+    bool correctPillar;
 
     void Start()
     {
@@ -25,19 +25,24 @@ public class FallingPillar : MonoBehaviour
         pillarRenderer = GetComponentInChildren<Renderer>();
     }
 
-    public void ActivatePillar(PillarType platformType)
+    /// <summary>
+    /// Pillar is assigned the platform type of the button and correct pillar status assigned
+    /// </summary>
+    /// <param name="pillarType">PillarType assigned to button pressed</param>
+    public void ActivatePillar(PillarType pillarType)
     {
-        currentPlatformType = platformType;
+        currentPillarType = pillarType;
         SetPlatformColour();
 
-        correctPlatform = currentPlatformType == targetPlatformType;
-        
-
+        correctPillar = currentPillarType == targetPlatformType;
     }
 
+    /// <summary>
+    /// Colour of pillar assigned based on pillar type
+    /// </summary>
     private void SetPlatformColour()
     {
-        switch (currentPlatformType)
+        switch (currentPillarType)
         {
             case PillarType.red:
                 pillarRenderer.material = red;
@@ -48,15 +53,21 @@ public class FallingPillar : MonoBehaviour
             case PillarType.purple:
                 pillarRenderer.material = purple;
                 break;
-
         }
     }
 
+    /// <summary>
+    /// Checks if pillar has been correctly enabled
+    /// </summary>
+    /// <returns>true if matching pillarType, false if not</returns>
     public bool GetPillarStatus()
     {
-        return correctPlatform;
+        return correctPillar;
     }
 
+    /// <summary>
+    /// Drops pillar through animation
+    /// </summary>
     public void DropPillar()
     {
         animator.SetTrigger("Drop Platform");

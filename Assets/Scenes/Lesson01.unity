@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &45515748
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -330,7 +329,7 @@ RectTransform:
   - {fileID: 721241957}
   - {fileID: 2097309498}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -384,7 +383,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &102780967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -495,7 +493,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &128634892
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -606,7 +603,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &167951565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -717,7 +713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &247562916
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -828,7 +823,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &292495816
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -939,7 +933,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &323724240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1050,7 +1043,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &325848618
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1145,7 +1137,7 @@ Transform:
   - {fileID: 882280097}
   - {fileID: 1375356058}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383625630
 GameObject:
@@ -1194,7 +1186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 3
-  platformActivated: 0
 --- !u!64 &383625633
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1507,7 +1498,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &524795529
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1618,7 +1608,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 3
-  platformActivated: 0
 --- !u!64 &528508182
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1793,7 +1782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!1 &665035001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,7 +1815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &665035003
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1996,7 +1983,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &721241956
 GameObject:
@@ -2078,7 +2065,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &730783578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2252,7 +2238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!1 &882280096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,7 +2355,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!1 &978168563
 GameObject:
@@ -2405,7 +2390,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &978168565
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2650,7 +2634,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1017301626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2775,7 +2758,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1026693801
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2886,7 +2868,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1048853066
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2997,7 +2978,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1053587650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3274,7 +3254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 1
-  platformActivated: 0
 --- !u!23 &1095371551
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3385,7 +3364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1103534122
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3820,7 +3798,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1392357234
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3931,7 +3908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1414526730
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4059,7 +4035,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1462953416
 GameObject:
@@ -4108,7 +4084,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1462953419
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4282,7 +4257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!1 &1522865564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4463,7 +4437,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 1
-  platformActivated: 0
 --- !u!23 &1568374731
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4574,7 +4547,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1590430575
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4685,7 +4657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1722466540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4801,7 +4772,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1804896212
 MonoBehaviour:
@@ -4997,7 +4968,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1872123675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5108,7 +5078,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1901688240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5352,7 +5321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1948331469
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5463,7 +5431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1951998647
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5694,7 +5661,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1980634315
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5819,7 +5785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &1985484677
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5916,7 +5881,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 3
-  platformActivated: 0
 --- !u!64 &2085233946
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6176,7 +6140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0
 --- !u!23 &2110238567
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6350,4 +6313,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisPlatform: 0
-  platformActivated: 0

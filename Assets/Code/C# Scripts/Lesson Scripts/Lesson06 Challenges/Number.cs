@@ -5,18 +5,16 @@
  * Organisation: Newcastle University
  * 
 */
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Number : MonoBehaviour
 {
     [SerializeField] int numberValue;
-
-    Mesh mesh;
-
     [SerializeField] Mesh[] numbers;
 
+    /// <summary>
+    /// Increase value of wall number by one
+    /// </summary>
     public void IncreaseValue()
     {
         numberValue++;
@@ -27,9 +25,11 @@ public class Number : MonoBehaviour
         }
 
         UpdateMesh();
-
     }
 
+    /// <summary>
+    /// Decrease value of wall number by one
+    /// </summary>
     public void DecreaseValue()
     {
         numberValue--;
@@ -40,15 +40,21 @@ public class Number : MonoBehaviour
         }
 
         UpdateMesh();
-
     }
 
+    /// <summary>
+    /// Change wall number mesh to represent new number value
+    /// </summary>
     void UpdateMesh()
     {
         if (numberValue >= 0 && numberValue <= 9)
             GetComponent<MeshFilter>().mesh = numbers[numberValue];
     }
 
+    /// <summary>
+    /// Gets current wall number value
+    /// </summary>
+    /// <returns>integer for wall number</returns>
     public int GetValue()
     {
         return numberValue;

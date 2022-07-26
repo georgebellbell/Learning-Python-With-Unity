@@ -18,6 +18,10 @@ public class FinishLight : MonoBehaviour
     {
         finishGate = FindObjectOfType<Gate_Finish>();
     }
+
+    /// <summary>
+    /// Activates light and checks which other lights are active
+    /// </summary>
     public void ActivateLight()
     {
         lightActivated = true;
@@ -25,6 +29,10 @@ public class FinishLight : MonoBehaviour
         finishGate.CheckLights();
     }
 
+    /// <summary>
+    /// Checks if specific light is active
+    /// </summary>
+    /// <returns>true if light is active, false if light is not active </returns>
     public bool IsLightActive()
     {
         return lightActivated;

@@ -42,6 +42,10 @@ public class lesson04 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// If player hits a shield object, player "gains" shield of that type and destroys that shield pickup
+    /// </summary>
+    /// <param name="shieldPickup">shield the player has hit </param>
     public void ActivateShield(GameObject shieldPickup)
     {
         playerEnergyType = shieldPickup.GetComponent<EnergyObject>().GetEnergyType();
@@ -50,6 +54,10 @@ public class lesson04 : MonoBehaviour
         Destroy(shieldPickup);
     }
 
+    /// <summary>
+    /// If player hits a wall, the wall type is assigned, python code runs and shield is removed
+    /// </summary>
+    /// <param name="obstacle"></param>
     private void TriggerObstacle(GameObject obstacle)
     {
         wallTypeHit = obstacle.GetComponent<EnergyObject>().GetEnergyType();
@@ -57,17 +65,27 @@ public class lesson04 : MonoBehaviour
         RemoveShield();
     }
 
+    /// <summary>
+    /// Deactivates shield object and sets playerEnergyType to none
+    /// </summary>
     private void RemoveShield()
     {
         playerEnergyType = EnergyType.None;
         shield.SetActive(false);
     }
 
+    /// <summary>
+    /// Ends level with a win
+    /// </summary>
     private void WinGame()
     {
         levelController.EndLevel(true);
     }
 
+    /// <summary>
+    /// Called via Python, retrieves wall energy type hit as a string
+    /// </summary>
+    /// <returns>string value for EnergyType</returns>
     public string GetWallType()
     {
         switch (wallTypeHit)
@@ -85,6 +103,10 @@ public class lesson04 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called via Python, retrieves player energy type hit as a string
+    /// </summary>
+    /// <returns>string value for EnergyType</returns>
     public string GetPlayerType()
     {
         switch (playerEnergyType)
@@ -102,11 +124,18 @@ public class lesson04 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called via Python, killing player
+    /// </summary>
     public void KillPlayer()
     {
         StartCoroutine(DisintegratePlayerAndEndGame());
     }
 
+    /// <summary>
+    /// Starts animation to disintigrate player. Game ends in failure
+    /// </summary>
+    /// <returns></returns>
     IEnumerator DisintegratePlayerAndEndGame()
     {
         animator.SetTrigger("PlayerDeath");

@@ -12,6 +12,9 @@ public class Button_Number : Button
 {
     [SerializeField] Gate_Number gate;
 
+    /// <summary>
+    /// overrides AcitvateButton to assign numbers to Gate_Number object and then runs python code
+    /// </summary>
     public override void ActivateButton()
     {
         base.ActivateButton();

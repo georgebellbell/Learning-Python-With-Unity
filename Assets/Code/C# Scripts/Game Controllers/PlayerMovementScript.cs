@@ -1,23 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
 
-    public CharacterController controller;
+    [SerializeField] CharacterController controller;
 
-    public float speed = 12f;
-    public float gravity = -9.81f;
-    public float jumpHeight = 3f;
+    [SerializeField] float speed = 12f;
+    [SerializeField] float gravity = -9.81f;
+    [SerializeField] float jumpHeight = 3f;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundDistance = 0.4f;
+    [SerializeField] LayerMask groundMask;
 
     Vector3 velocity;
-    public bool isGrounded;
-    public bool onLadder;
+    [SerializeField] bool isGrounded;
+    [SerializeField] bool onLadder;
     
     void Update()
     {

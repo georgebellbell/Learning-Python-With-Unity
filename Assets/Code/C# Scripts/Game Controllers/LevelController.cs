@@ -12,7 +12,7 @@ public class LevelController : MonoBehaviour
 {
     [SerializeField] GameObject WinUI, LoseUI;
 
-    private bool gameRunning = true;
+    bool gameRunning = true;
     int sceneIndex;
 
     void Start()
@@ -20,6 +20,9 @@ public class LevelController : MonoBehaviour
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
+    /// <summary>
+    /// If R key is pressed, when the end of game is reached, the level will restart
+    /// </summary>
     void Update()
     {
         if (gameRunning == false && Input.GetKeyDown(KeyCode.R))
@@ -27,13 +30,19 @@ public class LevelController : MonoBehaviour
             RestartLevel();
         }
     }
-
+    
+    /// <summary>
+    /// Reloads the current scene and restarts the time
+    /// </summary>
     public void RestartLevel()
     {
         TogglePause();
         SceneManager.LoadScene(sceneIndex);
     }
 
+    /// <summary>
+    /// Pauses or unpauses the game
+    /// </summary>
     public void TogglePause()
     {
         gameRunning = !gameRunning;
@@ -48,37 +57,38 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    public void PauseGame()
-    {
-        gameRunning = false;
-        Time.timeScale = 0;
-    }
-
+    /// <summary>
+    /// Game ends, and depending on value passed in, game will be won or lost
+    /// </summary>
+    /// <param name="GameWon">true if game has been won, false if game has been lost</param>
     public void EndLevel(bool GameWon)
     {
         PauseGame();
 
         if (GameWon)
         {
-            ShowWinUI();
+            WinUI.SetActive(true);
         }
         else
         {
-            ShowLoseUI();
+            LoseUI.SetActive(true);
         }
     }
 
-    private void ShowWinUI()
+    /// <summary>
+    /// Stops the game entirely
+    /// </summary>
+    void PauseGame()
     {
-        WinUI.SetActive(true);
+        gameRunning = false;
+        Time.timeScale = 0;
     }
 
-    private void ShowLoseUI()
-    {
-        LoseUI.SetActive(true);
-    }
-
-    public bool IsGamePaused()
+    /// <summary>
+    /// Checks if game is running or not
+    /// </summary>
+    /// <returns>true if game is running, false if game is not running</returns>
+    public bool IsGameRunning()
     {
         return gameRunning;
     }

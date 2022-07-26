@@ -12,6 +12,9 @@ public class EnergyObject : MonoBehaviour
     [SerializeField] EnergyType energyType = EnergyType.None;
     [SerializeField] Material red, blue, green, purple;
 
+    /// <summary>
+    /// At start of level, both the shields and walls have their colours assigned to them
+    /// </summary>
     void Start()
     {
         Renderer renderer = GetComponent<Renderer>();
@@ -32,6 +35,10 @@ public class EnergyObject : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Get the energy type of current object
+    /// </summary>
+    /// <returns></returns>
     public EnergyType GetEnergyType()
     {
         return energyType;

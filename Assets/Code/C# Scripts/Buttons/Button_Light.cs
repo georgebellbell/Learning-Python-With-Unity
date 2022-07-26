@@ -10,16 +10,12 @@ using UnityEngine;
 public class Button_Light : Button
 {
     [SerializeField] FinishLight linkedLight;
-    [SerializeField] bool buttonActivated = false;
-
+    /// <summary>
+    /// overrides AcitvateButton to activate a specific light of the finish gate
+    /// </summary>
     public override void ActivateButton()
     {
         base.ActivateButton();
         linkedLight.ActivateLight();
-    }
-
-    public bool IsButtonActive()
-    {
-        return buttonActivated;
     }
 }

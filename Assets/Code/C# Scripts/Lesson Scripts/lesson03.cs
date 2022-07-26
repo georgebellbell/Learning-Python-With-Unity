@@ -6,19 +6,22 @@
  * 
 */
 using UnityEditor.Scripting.Python;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
 public class lesson03 : MonoBehaviour
 {
+    [Header("Coin Details")]
+    [SerializeField] TextMeshProUGUI coinCounter;
     [SerializeField] int currentCoinCount = 0;
     [SerializeField] int totalCoinCount;
 
-    [SerializeField] Material finishOpen, finishClosed;
+    [Header("Finish Details")]
+    [SerializeField] Material finishOpen;
+    [SerializeField] Material finishClosed;
     [SerializeField] GameObject finishObject;
-    [SerializeField] TextMeshProUGUI coinCounter;
 
+    [Header("Task Details")]
     [SerializeField] TextMeshProUGUI[] tasksUI = new TextMeshProUGUI[7];
     [SerializeField] bool[] tasks = new bool[7];
 
@@ -30,11 +33,10 @@ public class lesson03 : MonoBehaviour
 
     private void Start()
     {
-
+        levelController = FindObjectOfType<LevelController>();
         finishRenderer = finishObject.GetComponent<Renderer>();
         finishCollider = finishObject.GetComponent<Collider>();
 
-        levelController = FindObjectOfType<LevelController>();
         totalCoinCount = GameObject.FindGameObjectsWithTag("coin").Length;
         UpdateCoinCounter();
 
@@ -52,6 +54,10 @@ public class lesson03 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Ends game with a win if player enters finish gate
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("finish"))
@@ -60,6 +66,10 @@ public class lesson03 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// If player interacts with a coin, coin count increases, object is destroyed and python code runs again
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("coin"))
@@ -73,31 +83,17 @@ public class lesson03 : MonoBehaviour
         }
     }
 
-    public int GetCoinCount()
-    {
-        return currentCoinCount;
-    }
-
-    public void SetFinish(bool correctCoinAmount)
-    {
-        winnable = correctCoinAmount;
-        finishCollider.isTrigger = winnable;
-
-        if (winnable)
-        {
-            finishRenderer.material = finishOpen;
-        }
-        else
-        {
-            finishRenderer.material = finishClosed;
-        }
-    }
-
+    /// <summary>
+    /// Updates UI for coin count
+    /// </summary>
     void UpdateCoinCounter()
     {
         coinCounter.text = "Coins: " + currentCoinCount + "/" + totalCoinCount;
     }
 
+    /// <summary>
+    /// Checks all the statements and if correct will highlight them green
+    /// </summary>
     void CheckTasks()
     {
         // All coins
@@ -115,7 +111,6 @@ public class lesson03 : MonoBehaviour
         // Not two coins
         tasks[6] = winnable && currentCoinCount != 2;
 
-
         for (int i = 0; i < tasksUI.Length; i++)
         {
             if (tasks[i])
@@ -126,6 +121,34 @@ public class lesson03 : MonoBehaviour
             {
                 tasksUI[i].color = Color.red;
             }
+        }
+    }
+
+    /// <summary>
+    /// Retrieves the current number of coins collected
+    /// </summary>
+    /// <returns> integer, number of coins</returns>
+    public int GetCoinCount()
+    {
+        return currentCoinCount;
+    }
+
+    /// <summary>
+    /// Called via python script, opening gate if correctCoinAmount is true, and vice versa is false
+    /// </summary>
+    /// <param name="correctCoinAmount">boolean, true if number of coins matches condition</param>
+    public void SetFinish(bool correctCoinAmount)
+    {
+        winnable = correctCoinAmount;
+        finishCollider.isTrigger = winnable;
+
+        if (winnable)
+        {
+            finishRenderer.material = finishOpen;
+        }
+        else
+        {
+            finishRenderer.material = finishClosed;
         }
     }
 }

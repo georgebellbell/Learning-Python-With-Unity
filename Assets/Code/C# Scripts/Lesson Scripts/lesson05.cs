@@ -18,7 +18,6 @@ public class lesson05 : MonoBehaviour
     LevelController levelController;
     Renderer platformRenderer;
     Color lerpedColour = Color.white;
-    float timeTaken;
     bool pythonRan = false;
 
     void Start()
@@ -28,6 +27,9 @@ public class lesson05 : MonoBehaviour
         PlatformUpdate();
     }
 
+    /// <summary>
+    /// If space key is pressed, and python code hasn't ran before, python code runs
+    /// </summary>
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && !pythonRan)
@@ -35,15 +37,13 @@ public class lesson05 : MonoBehaviour
             pythonRan = true;
             PythonRunner.RunFile($"{Application.dataPath}/code/lesson05.py");
             StartCoroutine(Countdown());
-        }
-        
-        timeTaken += Time.deltaTime;
-        
-
+        }    
     }
 
-    
-
+    /// <summary>
+    /// Creates cubes at different y positions
+    /// </summary>
+    /// <param name="yPos">float, y position of the cube</param>
     public void CreateCube(float yPos)
     {
         GameObject newObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -52,6 +52,10 @@ public class lesson05 : MonoBehaviour
         newObject.tag = "cube";
     }
 
+    /// <summary>
+    /// As Python code is ran, timer starts and after set time, object count is checked
+    /// </summary>
+    /// <returns></returns>
     public IEnumerator Countdown()
     {
         int timeToCheck = 7;
@@ -61,7 +65,16 @@ public class lesson05 : MonoBehaviour
             yield return new WaitForSeconds(1);
             timeToCheck--;
         }
-        
+
+        CheckCubes();
+    }
+
+    /// <summary>
+    /// If the number of cubes collected is correct and there are no more instances in the scene, the level ends in a win
+    /// Otherwise, the level ends in a fail
+    /// </summary>
+    private void CheckCubes()
+    {
         if (cubesHit == targetCubeNumber && !GameObject.FindGameObjectWithTag("cube"))
         {
             levelController.EndLevel(true);
@@ -72,19 +85,21 @@ public class lesson05 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// When cube hits platform, cube hit count increases, the cube is destroyed and scene is updated
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        DestroyCube(collision.gameObject);
-        
-    }
-
-    void DestroyCube(GameObject collisionObject)
-    {
         cubesHit++;
-        Destroy(collisionObject);
-        PlatformUpdate();
+        Destroy(collision.gameObject);
+        PlatformUpdate();   
     }
 
+    /// <summary>
+    /// With every cube that hits platform, cube count UI increases and colour gradually changes towards green
+    /// Unless too many cubes hit then it instantly turns red and game ends
+    /// </summary>
     private void PlatformUpdate()
     {
         if (cubesHit == 0)
