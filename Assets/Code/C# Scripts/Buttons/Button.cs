@@ -16,8 +16,13 @@ public class Button : MonoBehaviour
 
     private void Start()
     {
-        buttonRenderer  = GetComponent<Renderer>();
-        animator        = GetComponent<Animator>();
+        StartButton();
+    }
+
+    public virtual void StartButton()
+    {
+        buttonRenderer = GetComponent<Renderer>();
+        animator = GetComponent<Animator>();
     }
 
     /// <summary>
