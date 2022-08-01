@@ -8,9 +8,9 @@ Organisation: Newcastle University
 
 import UnityEngine as ue
 
-button = ue.GameObject.FindGameObjectWithTag("button_platform")
+button = ue.GameObject.FindGameObjectWithTag("button_platform").GetComponent("Button_Platforms")
 
-platforms = button.GetComponent("Button_Platforms").GetPlatforms()
+platforms = button.GetPlatforms()
 
 
 def activate_platform(current_platform):

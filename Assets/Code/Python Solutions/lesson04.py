@@ -7,7 +7,7 @@ Organisation: Newcastle University
 """
 import UnityEngine as ue
 
-player = ue.GameObject.FindGameObjectWithTag("Player")
+player = ue.GameObject.FindGameObjectWithTag("Player").GetComponent("lesson04")
 
 
 def get_wall_type():
@@ -16,7 +16,7 @@ def get_wall_type():
 
 	:return: EnergyType
 	"""
-	return player.GetComponent("lesson04").GetWallType()
+	return player.GetWallType()
 
 
 def get_player_type():
@@ -25,14 +25,14 @@ def get_player_type():
 
 	:return: EnergyType
 	"""
-	return player.GetComponent("lesson04").GetPlayerType()
+	return player.GetPlayerType()
 
 
 def player_dies():
 	"""
 	Should be invoked when energy type of wall does not match energy type of player's shield, killing them
 	"""
-	player.GetComponent("lesson04").KillPlayer()
+	player.KillPlayer()
 
 
 """

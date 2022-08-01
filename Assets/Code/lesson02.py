@@ -8,7 +8,7 @@ Organisation: Newcastle University
 
 import UnityEngine as ue
 
-level = ue.GameObject.FindGameObjectWithTag("levelmanager")
+level = ue.GameObject.FindGameObjectWithTag("levelmanager").GetComponent("lesson01And02")
 
 
 def create_cube(x_pos):
@@ -17,7 +17,7 @@ def create_cube(x_pos):
 
 	:param x_pos: int, X position of cube, should coincide with incrementer of loop
 	"""
-	level.GetComponent("lesson01And02").CreateCube(x_pos)
+	level.CreateCube(x_pos)
 
 
 def create_sphere(x_pos):
@@ -26,7 +26,7 @@ def create_sphere(x_pos):
 
 	:param x_pos: int, X position of sphere, should coincide with incrementer of loop
 	"""
-	level.GetComponent("lesson01And02").CreateSphere(x_pos)
+	level.CreateSphere(x_pos)
 
 
 def create_cylinder(x_pos):
@@ -35,7 +35,7 @@ def create_cylinder(x_pos):
 
 	:param x_pos: int, X position of cylinder, should coincide with incrementer of loop
 	"""
-	level.GetComponent("lesson01And02").CreateCylinder(x_pos)
+	level.CreateCylinder(x_pos)
 
 
 def create_objects(new_list):

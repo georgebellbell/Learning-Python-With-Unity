@@ -8,7 +8,7 @@ Organisation: Newcastle University
 
 import UnityEngine as ue
 
-button_red = ue.GameObject.FindGameObjectWithTag("button_slicing_red")
+button_red = ue.GameObject.FindGameObjectWithTag("button_slicing_red").GetComponent("Button_Slicing")
 
 
 def activate_pillars(sliced_pillars):
@@ -24,7 +24,7 @@ def activate_pillars(sliced_pillars):
 				pillars_bool[i] = True
 				break
 
-	button_red.GetComponent("Button_Slicing").SetPythonPillars(pillars_bool)
+	button_red.SetPythonPillars(pillars_bool)
 
 
 PILLARS = ["Pillar1", "Pillar2", "Pillar3", "Pillar4", "Pillar5", "Pillar6", "Pillar7", "Pillar8", "Pillar9"]

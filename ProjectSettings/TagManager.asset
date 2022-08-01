@@ -22,6 +22,7 @@ TagManager:
   - button_slicing_purple
   - ladder
   - button_platform_colour
+  - button_linked
   layers:
   - Default
   - TransparentFX

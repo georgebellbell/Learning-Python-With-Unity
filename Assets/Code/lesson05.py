@@ -7,7 +7,7 @@ Organisation: Newcastle University
 """
 import UnityEngine as ue
 
-player = ue.GameObject.FindGameObjectWithTag("platform")
+player = ue.GameObject.FindGameObjectWithTag("platform").GetComponent("lesson05")
 
 
 def create_cube(y_pos):
@@ -16,7 +16,7 @@ def create_cube(y_pos):
 
 	:param y_pos: Y position of cube, should coincide with incrementer of loop
 	"""
-	player.GetComponent("lesson05").CreateCube(y_pos)
+	player.CreateCube(y_pos)
 
 
 """

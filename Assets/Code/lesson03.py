@@ -8,7 +8,7 @@ Organisation: Newcastle University
 
 import UnityEngine as ue
 
-player = ue.GameObject.FindGameObjectWithTag("Player")
+player = ue.GameObject.FindGameObjectWithTag("Player").GetComponent("lesson03")
 
 
 def winnable_game(winnable):
@@ -17,7 +17,7 @@ def winnable_game(winnable):
 
 	:param winnable: bool, True to enable the gate and False to disable the gate
 	"""
-	player.GetComponent("lesson03").SetFinish(winnable)
+	player.SetFinish(winnable)
 
 
 coin_count = player.GetComponent("lesson03").GetCoinCount()

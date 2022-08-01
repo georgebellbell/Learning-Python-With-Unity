@@ -8,17 +8,17 @@ Organisation: Newcastle University
 
 import UnityEngine as ue
 
-obstacle = ue.GameObject.FindGameObjectWithTag("obstacle")
+obstacle = ue.GameObject.FindGameObjectWithTag("obstacle").GetComponent("Gate_Number")
 
 
 def open_gate():
 	"""
 	Called when the conditions of equations are met
 	"""
-	obstacle.GetComponent("Gate_Number").CheckGate()
+	obstacle.CheckGate()
 
 
-numbers = obstacle.GetComponent("Gate_Number").GetNumbers()
+numbers = obstacle.GetNumbers()
 
 numA_1 = numbers[0]
 numA_2 = numbers[1]
