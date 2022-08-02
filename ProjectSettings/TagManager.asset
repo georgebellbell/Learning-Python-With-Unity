@@ -23,6 +23,7 @@ TagManager:
   - ladder
   - button_platform_colour
   - button_linked
+  - key_value_pair
   layers:
   - Default
   - TransparentFX
