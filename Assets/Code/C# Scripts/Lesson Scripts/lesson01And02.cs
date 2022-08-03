@@ -13,8 +13,8 @@ using TMPro;
 public class lesson01And02 : MonoBehaviour
 {
     [SerializeField] Platform[] platforms;
-    [SerializeField] GameObject[] tasksLevels;
-    [SerializeField] GameObject levelPicker;
+    //[SerializeField] GameObject[] tasksLevels;
+    //[SerializeField] GameObject levelPicker;
     [SerializeField] TextMeshProUGUI startTest;
     [SerializeField] int lessonNumber;
     [SerializeField] float timeCount = 1, timeDelay = 0.5f;
@@ -99,8 +99,8 @@ public class lesson01And02 : MonoBehaviour
     /// <param name="task">The specific task that will be activated</param>
     public void ActivateTask(int task)
     {
-        levelPicker.gameObject.SetActive(false);
-        tasksLevels[task].SetActive(true);
+        //levelPicker.gameObject.SetActive(false);
+        //tasksLevels[task].SetActive(true);
         startTest.enabled = true;
     }
 

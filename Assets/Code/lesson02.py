@@ -62,3 +62,6 @@ OBJECTS = ["cylinder1", "cube1", "sphere", "cube2", "cylinder2"]
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
+
+# Create all objects
+create_objects(OBJECTS)

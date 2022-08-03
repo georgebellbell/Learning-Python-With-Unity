@@ -33,3 +33,6 @@ yellow_room_dict = {
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
+inverted_dict = dict(map(reversed, yellow_room_dict.items()))
+
+check_dictionary(inverted_dict)
