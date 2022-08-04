@@ -32,3 +32,4 @@ PILLARS = ["Pillar1", "Pillar2", "Pillar3", "Pillar4", "Pillar5", "Pillar6", "Pi
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
+activate_pillars(PILLARS[:3])

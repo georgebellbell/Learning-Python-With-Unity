@@ -46,13 +46,6 @@ public class lesson03 : MonoBehaviour
         CheckTasks();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            levelController.RestartLevel();
-        }
-    }
 
     /// <summary>
     /// Ends game with a win if player enters finish gate

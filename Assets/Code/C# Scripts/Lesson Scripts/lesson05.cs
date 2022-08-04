@@ -14,6 +14,7 @@ public class lesson05 : MonoBehaviour
 {
     [SerializeField] float targetCubeNumber, cubesHit;
     [SerializeField] TextMeshProUGUI cubeCountUI;
+    [SerializeField] GameObject spaceObject;
 
     LevelController levelController;
     Renderer platformRenderer;
@@ -34,6 +35,7 @@ public class lesson05 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !pythonRan)
         {
+            spaceObject.SetActive(false);
             pythonRan = true;
             PythonRunner.RunFile($"{Application.dataPath}/code/lesson05.py");
             StartCoroutine(Countdown());

@@ -13,6 +13,8 @@ button = ue.GameObject.FindGameObjectWithTag("button_platform").GetComponent("Bu
 # retrieves all the platforms
 platforms = button.GetPlatforms()
 
+print(platforms)
+
 
 def activate_platform(current_platform):
     """
@@ -26,3 +28,9 @@ def activate_platform(current_platform):
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
+
+i = 0
+platform_count = len(platforms)
+
+for i in range(platform_count - 1):
+	activate_platform(platforms[i])

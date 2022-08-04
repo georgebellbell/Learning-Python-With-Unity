@@ -10,50 +10,29 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    [SerializeField] GameObject WinUI, LoseUI;
+    [SerializeField] GameObject WinUI, LoseUI, PauseUI;
 
-    bool gameRunning = true;
+    public static bool GameIsPaused = false;
     int sceneIndex;
 
     void Start()
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        StartGame();
     }
 
-    /// <summary>
-    /// If R key is pressed, when the end of game is reached, the level will restart
-    /// </summary>
     void Update()
     {
-        if (gameRunning == false && Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Escape) && PauseUI && !(WinUI.activeSelf || LoseUI.activeSelf))
         {
-            RestartLevel();
-        }
-    }
-    
-    /// <summary>
-    /// Reloads the current scene and restarts the time
-    /// </summary>
-    public void RestartLevel()
-    {
-        TogglePause();
-        SceneManager.LoadScene(sceneIndex);
-    }
-
-    /// <summary>
-    /// Pauses or unpauses the game
-    /// </summary>
-    public void TogglePause()
-    {
-        gameRunning = !gameRunning;
-
-        if (gameRunning)
-        {
-            Time.timeScale = 1;
-        }
-        else
-        {
-            Time.timeScale = 0;
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
 
@@ -63,7 +42,7 @@ public class LevelController : MonoBehaviour
     /// <param name="GameWon">true if game has been won, false if game has been lost</param>
     public void EndLevel(bool GameWon)
     {
-        PauseGame();
+        StopGame();
 
         if (GameWon)
         {
@@ -75,22 +54,47 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Stops the game entirely
-    /// </summary>
-    void PauseGame()
+    public void Resume()
     {
-        gameRunning = false;
+        StartGame();
+        PauseUI.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        if(PauseUI)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        GameIsPaused = false;
+        Time.timeScale = 1;
+    }
+
+    void Pause()
+    {
+        StopGame();
+        PauseUI.SetActive(true);
+    }
+
+    public void StopGame()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        GameIsPaused = true;
         Time.timeScale = 0;
     }
 
-    /// <summary>
-    /// Checks if game is running or not
-    /// </summary>
-    /// <returns>true if game is running, false if game is not running</returns>
-    public bool IsGameRunning()
+    public void Restart()
     {
-        return gameRunning;
+        SceneManager.LoadScene(sceneIndex);
     }
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void PlayLevel(int levelIndex)
+    {
+        SceneManager.LoadScene(levelIndex);
+    }
 }

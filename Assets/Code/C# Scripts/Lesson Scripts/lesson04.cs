@@ -129,17 +129,8 @@ public class lesson04 : MonoBehaviour
     /// </summary>
     public void KillPlayer()
     {
-        StartCoroutine(DisintegratePlayerAndEndGame());
-    }
-
-    /// <summary>
-    /// Starts animation to disintigrate player. Game ends in failure
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator DisintegratePlayerAndEndGame()
-    {
         animator.SetTrigger("PlayerDeath");
-        yield return new WaitForSeconds(1f);
         levelController.EndLevel(false);
     }
+
 }

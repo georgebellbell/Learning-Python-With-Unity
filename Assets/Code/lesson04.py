@@ -39,3 +39,9 @@ def player_dies():
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
 
+player_type = get_player_type()
+
+wall_type = get_wall_type()
+
+if player_type != wall_type:
+	player_dies()

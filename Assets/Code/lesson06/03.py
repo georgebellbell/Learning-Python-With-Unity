@@ -31,3 +31,10 @@ numB_3 = numbers[5]
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
+
+equationA = numA_1 < numA_2 < numA_3
+
+equationB = numB_1 * numB_2 == numB_3
+
+if equationA and equationB:
+	open_gate()

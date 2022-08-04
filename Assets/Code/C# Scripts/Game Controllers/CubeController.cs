@@ -11,13 +11,13 @@ public class CubeController : MonoBehaviour
 {
     [SerializeField] float speed, jumpForce;
     
-    LevelController levelController;
+   // LevelController levelController;
     Rigidbody rb;
     bool jumping;
     
     private void Start()
     {
-        levelController = FindObjectOfType<LevelController>();
+        //levelController = FindObjectOfType<LevelController>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -26,7 +26,7 @@ public class CubeController : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (levelController.IsGameRunning())
+        if (!LevelController.GameIsPaused)
         {
             MovementAndJumping();
         }
