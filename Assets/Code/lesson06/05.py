@@ -26,6 +26,3 @@ platform_positions = button.GetPlatformTransforms()
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
-
-platform_dictionary = dict(zip(platform_objects, platform_positions))
-set_platforms(platform_dictionary)

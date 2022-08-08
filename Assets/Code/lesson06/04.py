@@ -47,7 +47,3 @@ get_platform_heights()
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
 
-sortedList = [val for (_, val) in sorted(zip(platform_heights, platform_colours), key=lambda x: \
-    x[0])]
-
-change_platforms(sortedList)

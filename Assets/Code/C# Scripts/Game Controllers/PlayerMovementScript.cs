@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-
     [SerializeField] CharacterController controller;
 
     [SerializeField] float speed = 12f;
@@ -15,22 +14,45 @@ public class PlayerMovementScript : MonoBehaviour
 
     Vector3 velocity;
     [SerializeField] bool isGrounded;
-    [SerializeField] bool onLadder;
     
     void Update()
     {
+        UpdateJump();
+        UpdateMovement();
+        Gravity();
+
+    }
+
+    /// <summary>
+    /// Check if player is on ground and if so, check if they want to jump
+    /// </summary>
+    private void UpdateJump()
+    {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && velocity.y < 0)
+        if (Input.GetButtonDown("Jump") && isGrounded && !Ladder.onLadder)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
+    }
+
+    /// <summary>
+    /// Moves user on x and z axis while not on ladder
+    /// Moves user on y axis while on ladder
+    /// </summary>
+    private void UpdateMovement()
+    {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move;
 
-        if (onLadder)
+        if (Ladder.onLadder)
         {
             move = transform.up * z;
         }
@@ -41,42 +63,19 @@ public class PlayerMovementScript : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Jump") && isGrounded && !onLadder)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+        
+    }
 
-        if (!onLadder)
+    /// <summary>
+    /// While not on ladder, gravity effect is created
+    /// </summary>
+    private void Gravity()
+    {
+        if (!Ladder.onLadder)
         {
             velocity.y += gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
-        }
-        
-
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("ladder"))
-        {
-            onLadder = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("ladder"))
-        {
-            onLadder = false;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("ladder"))
-        {
-            onLadder = false;
         }
     }
 

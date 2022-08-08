@@ -28,9 +28,3 @@ def activate_platform(current_platform):
 """
 Use the functions above and your python knowledge to accomplish the Unity Scene's challenges, as described on Canvas
 """
-
-i = 0
-platform_count = len(platforms)
-
-for i in range(platform_count - 1):
-	activate_platform(platforms[i])

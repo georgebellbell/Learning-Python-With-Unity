@@ -54,12 +54,18 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resumes the game and disables pause UI
+    /// </summary>
     public void Resume()
     {
         StartGame();
         PauseUI.SetActive(false);
     }
 
+    /// <summary>
+    /// Restricts mouse to Screen, and enables timescale again
+    /// </summary>
     public void StartGame()
     {
         if(PauseUI)
@@ -70,12 +76,18 @@ public class LevelController : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    /// <summary>
+    /// Stops the game and shows the pause UI
+    /// </summary>
     void Pause()
     {
         StopGame();
         PauseUI.SetActive(true);
     }
 
+    /// <summary>
+    /// Unrestricts mouse and disables timescale
+    /// </summary>
     public void StopGame()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -83,16 +95,26 @@ public class LevelController : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    /// <summary>
+    /// Reloads the current screen
+    /// </summary>
     public void Restart()
     {
         SceneManager.LoadScene(sceneIndex);
     }
 
+    /// <summary>
+    /// Loads the Main Menu scene
+    /// </summary>
     public void BackToMenu()
     {
         SceneManager.LoadScene(0);
     }
 
+    /// <summary>
+    /// Assigned to buttons and loads specific level
+    /// </summary>
+    /// <param name="levelIndex">Scene to be loaded</param>
     public void PlayLevel(int levelIndex)
     {
         SceneManager.LoadScene(levelIndex);

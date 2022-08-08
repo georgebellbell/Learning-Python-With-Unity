@@ -6,7 +6,7 @@ public class Ladder : MonoBehaviour
     Transform playerTransform;
 
     float speedOnLadder = 3.2f;
-    bool onLadder;
+    public static bool onLadder;
     
     void Start()
     {
