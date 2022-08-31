@@ -70,7 +70,8 @@ public class Button_Coloured_Platforms : Button
     public override void ActivateButton()
     {
         base.ActivateButton();
-        PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/04.py");
+        PythonManager.RunRedRoom();
+        //PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/04.py");
     }
 
     /// <summary>

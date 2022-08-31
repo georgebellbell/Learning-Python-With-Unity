@@ -18,6 +18,8 @@ public class lesson04 : MonoBehaviour
     Animator animator;
     LevelController levelController;
 
+    bool playerDead = false;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -61,7 +63,18 @@ public class lesson04 : MonoBehaviour
     private void TriggerObstacle(GameObject obstacle)
     {
         wallTypeHit = obstacle.GetComponent<EnergyObject>().GetEnergyType();
-        PythonRunner.RunFile($"{Application.dataPath}/code/lesson04.py");
+        PythonManager.RunLevel("4");
+
+        if (wallTypeHit != playerEnergyType && !playerDead)
+        {
+            Debug.LogError("Shield and Wall type do not match but player is still alive, please fix");
+            return;
+        }
+
+        if (playerDead)
+        {
+            levelController.EndLevel(false);
+        }
         RemoveShield();
     }
 
@@ -130,7 +143,8 @@ public class lesson04 : MonoBehaviour
     public void KillPlayer()
     {
         animator.SetTrigger("PlayerDeath");
-        levelController.EndLevel(false);
+        playerDead = true;
+        //levelController.EndLevel(false);
     }
 
 }

@@ -37,7 +37,7 @@ public class lesson05 : MonoBehaviour
         {
             spaceObject.SetActive(false);
             pythonRan = true;
-            PythonRunner.RunFile($"{Application.dataPath}/code/lesson05.py");
+            PythonManager.RunLevel("5");
             StartCoroutine(Countdown());
         }    
     }

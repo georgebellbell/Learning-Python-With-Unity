@@ -28,7 +28,8 @@ public class KeyValuePairToggle : Button
         {
             ToggleLeft();
         }
-        PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/06.py");
+        PythonManager.RunYellowRoom();
+        //PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/06.py");
 
     }
 

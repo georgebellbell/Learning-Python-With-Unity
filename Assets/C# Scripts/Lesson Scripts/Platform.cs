@@ -31,7 +31,6 @@ public class Platform : MonoBehaviour
         
         if (thisPlatform.ToString() == spawnedObject.tag)
         {
-            lesson.IncreaseTimeRemaining();
             ActivatePlatform(spawnedObject);
             return;
         }

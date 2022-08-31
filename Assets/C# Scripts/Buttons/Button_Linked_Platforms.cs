@@ -41,6 +41,7 @@ public class Button_Linked_Platforms : Button
     public override void ActivateButton()
     {
         base.ActivateButton();
-        PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/05.py");
+        PythonManager.RunGreenRoom();
+        //PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/05.py");
     }
 }

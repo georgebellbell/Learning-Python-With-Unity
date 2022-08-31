@@ -24,7 +24,8 @@ public class Button_Slicing : Button
     public override void ActivateButton()
     {
         base.ActivateButton();
-        PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/02_" + filename + ".py");
+        PythonManager.RunWhiteRoom(filename);
+        //PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/02_" + filename + ".py");
         SlicePillars();
     }
     

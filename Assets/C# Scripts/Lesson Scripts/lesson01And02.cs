@@ -17,7 +17,7 @@ public class lesson01And02 : MonoBehaviour
     //[SerializeField] GameObject levelPicker;
     [SerializeField] TextMeshProUGUI startTest;
     [SerializeField] int lessonNumber;
-    [SerializeField] float timeCount = 1, timeDelay = 0.5f;
+    //[SerializeField] float timeCount = 1, timeDelay = 0.5f;
 
     LevelController levelController;
 
@@ -38,7 +38,7 @@ public class lesson01And02 : MonoBehaviour
             pythonRan = true;
             startTest.enabled = false;
             StartCoroutine(Countdown());
-            PythonRunner.RunFile($"{Application.dataPath}/code/lesson0" + lessonNumber + ".py");
+            PythonManager.RunLevel(lessonNumber.ToString());
         }
     }
 
@@ -48,12 +48,15 @@ public class lesson01And02 : MonoBehaviour
     /// <returns></returns>
     public IEnumerator Countdown()
     {
-        while (timeCount > 0)
+        int timeToCheck = 3;
+
+        while (timeToCheck > 0)
         {
             yield return new WaitForSeconds(1);
-            timeCount--;
+            timeToCheck--;
         }
-       
+
+
         CheckActivePlatforms();
     }
 
@@ -104,14 +107,6 @@ public class lesson01And02 : MonoBehaviour
         startTest.enabled = true;
     }
 
-    /// <summary>
-    /// Called when a correct object hits a platform, increasing the remaining time
-    /// </summary>
-    public void IncreaseTimeRemaining()
-    {
-        timeCount = timeCount + timeDelay;
-    }
-    
     /// <summary>
     /// Creates cube for lesson 01
     /// </summary>

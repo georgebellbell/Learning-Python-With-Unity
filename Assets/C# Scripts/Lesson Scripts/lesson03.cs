@@ -41,8 +41,7 @@ public class lesson03 : MonoBehaviour
         UpdateCoinCounter();
 
         SetFinish(false);
-        
-        PythonRunner.RunFile($"{Application.dataPath}/code/lesson03.py");
+        PythonManager.RunLevel("3");
         CheckTasks();
     }
 

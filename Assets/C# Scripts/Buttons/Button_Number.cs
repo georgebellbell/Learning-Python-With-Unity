@@ -19,6 +19,7 @@ public class Button_Number : Button
     {
         base.ActivateButton();
         gate.SetNumbers();
-        PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/03.py");
+        PythonManager.RunOrangeRoom();
+        //PythonRunner.RunFile($"{Application.dataPath}/code/lesson06/03.py");
     }
 }
